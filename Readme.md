@@ -51,41 +51,36 @@ This project leverages advanced AI technologies like **LLaMA 3.1**, **LangChain*
 ## Workflow
 
 1. **User Query**  
-   ```plaintext
+  
    - Users interact with the chatbot via a web or mobile interface.
    - Input is submitted in natural language (e.g., a question or command).
    - The chatbot captures the query and sends it to the backend API.
-Backend API
 
-plaintext
-Copy code
-- Acts as the communication bridge between the user interface and processing modules.
-- Receives the user query and forwards it to the NLP model for processing.
-- Handles the responses and ensures seamless interaction with the frontend.
-NLP Model (LLaMA 3.1)
+2. **Backend API**
 
-plaintext
-Copy code
-- Processes the user query to extract intent and context.
-- Converts the query into vector embeddings for semantic understanding.
-- Forwards the embeddings to the vector database for similarity matching.
-Knowledge Retrieval
+   - Acts as the communication bridge between the user interface and processing modules.
+   - Receives the user query and forwards it to the NLP model for processing.
+   - Handles the responses and ensures seamless interaction with the frontend.
 
-plaintext
-Copy code
-- The vector database (e.g., Pinecone) searches for relevant content.
-- Finds the closest matches to the query from precomputed blog embeddings.
-- Returns the most relevant blog entries or information snippets.
-Response Generation
+3. **NLP Model (LLaMA 3.1)**
 
-plaintext
-Copy code
-- Combines user input with the retrieved content to form a coherent response.
-- LLaMA 3.1 generates a dynamic and personalized answer.
-- Incorporates user history and preferences for improved engagement.
-User Response
+   - Processes the user query to extract intent and context.
+   - Converts the query into vector embeddings for semantic understanding.
+   - Forwards the embeddings to the vector database for similarity matching.
 
-plaintext
-Copy code
-- The chatbot sends the generated response back to the user interface.
-- Users see the response displayed and can continue the conversation.
+4. **Knowledge Retrieval**
+
+   - The vector database (e.g., Pinecone) searches for relevant content.
+   - Finds the closest matches to the query from precomputed blog embeddings.
+   - Returns the most relevant blog entries or information snippets.
+
+5. **Response Generation**
+
+   - Combines user input with the retrieved content to form a coherent response.
+   - LLaMA 3.1 generates a dynamic and personalized answer.
+   - Incorporates user history and preferences for improved engagement.
+
+6. **User Response**
+
+   - The chatbot sends the generated response back to the user interface.
+   - Users see the response displayed and can continue the conversation.
